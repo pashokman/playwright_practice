@@ -56,9 +56,26 @@ Headed mode - run all tests with opening the browser
 ```
 pytest --headed
 ```
-Run in multiple browsers
+Run in multiple browsers engines
 ```
 pytest --browser webkit --browser firefox
+```
+Run in specific browser
+```
+pytest --browser-channel=msedge
+pytest --browser-channel=chrome
+```
+Run like on mobile device
+```
+pytest --device="iPhone 11" --browser=webkit
+```
+Run tests and making screenshots on failure
+```
+pytest -s -v --headed --screenshot=only-on-failure
+```
+Run tests and making a video
+```
+pytest -s -v --headed --video=retain-on-failure --slowmo=3000
 ```
 Run specific tests
 ```
@@ -72,6 +89,19 @@ Run tests in parallel (should be installed pytest-xdist)
 ```
 pytest --numprocesses 2
 ```
+Run last failed tests
+```
+pytest --lf
+```
+Run all tests starts with failed first
+```
+pytest --ff
+```
+Stop at first failure
+```
+pytest -x
+```
+
 
 
 # Playwrite commands
