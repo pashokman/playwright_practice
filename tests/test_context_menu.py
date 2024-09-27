@@ -1,10 +1,10 @@
 from common_import import *
 
+from page_objects.context_menu_page import ContextMenuPage
 
-def handle_dialog(dialog):
-    dialog.accept()
+cm_page = ContextMenuPage()
 
 
 def test_context_menu_right_click(context_menu_page):
-    context_menu_page.locator('#hot-spot').click(button="right")
-    context_menu_page.on("dialog", handle_dialog)
+    cm_page.open_context_menu(context_menu_page)
+    cm_page.close_popup(context_menu_page)
